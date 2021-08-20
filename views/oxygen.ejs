@@ -1,0 +1,124 @@
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>INVENTORY</title>
+  <!-- Tell the browser to be responsive to screen width -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  <!-- Theme style -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/admin-lte/3.1.0/js/adminlte.min.js">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/admin-lte@3.1/dist/css/adminlte.min.css"/>
+  <!-- Google Font: Source Sans Pro -->
+  <link rel="icon" type="image/png" href="logo.png"/>
+  <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet"/>
+  <script src="https://cdn.jsdelivr.net/npm/admin-lte@3.1/dist/js/adminlte.min.js"></script>
+
+</head>
+
+
+      <!-- Main Sidebar Container -->
+  <aside class="main-sidebar sidebar-dark-primary elevation-4">
+    <!-- Brand Logo -->
+    <a href="/" class="brand-link">
+      <span class="brand-text font-weight-light text-center">Covid Inventory System</span>
+    </a>
+
+    <!-- Sidebar -->
+    <div class=".sidebar-collapse">
+      <!-- Sidebar Menu -->
+      <nav class="mt-2">
+        <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+          <!-- Add icons to the links using the .nav-icon class
+               with font-awesome or any other icon font library -->
+          <li class="nav-item has-treeview menu-open">
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="/" class="nav-link">
+                  <i class="nav-icon fas fa-th"></i>
+                  <p>Beds</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="/oxygen" class="nav-link">
+                  <i class="nav-icon fas fa-th"></i>
+                  <p>Oxygen</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="/create_beds" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Add Beds</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="/create_oxygen" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Add Oxygen</p>
+                </a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+      <!-- /.sidebar-menu -->
+    </div>
+    <!-- /.sidebar -->
+  </aside>
+  <div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    
+    <div class="content">
+      <div class="container-fluid">
+      <h1 class="text-center">Centro Inventory Management</h1>
+              <div class="card">
+                  <div class="card-header">
+                    <div class="card card-primary card-outline">
+                      <div class="card-header">
+                        <h5 class="m-0">COVID - 19</h5>
+                      </div>
+                      <div class="card-body">
+                        <p class="card-text"> <a href="https://www.mohfw.gov.in/">Click here</a>  to get the latest information from the Ministry of Health and Family Welfare.</p>
+
+        
+                        <a href="https://www.google.com/search?kgmid=/g/11j2cc_qll" class="btn btn-primary">See more resources on Google</a>
+                      </div>
+                    </div>
+                      <div class="card-body">
+                        
+                        <table class="table table-hover">
+                          <thead class="thead-dark">
+                            <tr>
+                              <th scope="col">S.No.</th>
+                              <th scope="col">No of litres</th>
+                              <th scope="col">Name</th>
+                              <th scope="col">Hospital/Supplier Name</th>
+                              <th scope="col">Phone Number</th>
+                              <th scope="col">Address</th>
+                              <th scope="col">Wrong info?</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <% let x = 1; %>
+                            <% for(let i of data) { %>
+                            <tr>
+                              <th scope="row"><%= x %></th>
+                              <td><%= i.nolitres %></th>
+                              <td><%= i.nameo %></td>
+                              <td><%= i.hnameo %></td>
+                              <td><%= i.numbero %></td>
+                              <td><%= i.addresso %></td>
+                              <td><a class="btn btn-danger" href="/delete-odetails/?id=<%= i._id %>">DELETE</a></td>
+                            </tr>
+                            <% x++; %>
+                            <% } %>
+                          </tbody>
+                    </div>
+                  </div>
+              </div>
+      
+    </section>
+  </div>
+  
+</body>
+</html>

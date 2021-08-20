@@ -1,0 +1,102 @@
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Centro</title>
+  <!-- Tell the browser to be responsive to screen width -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  <!-- Theme style -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/admin-lte/3.1.0/js/adminlte.min.js">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/admin-lte@3.1/dist/css/adminlte.min.css"/>
+  <!-- Google Font: Source Sans Pro -->
+  <link rel="icon" type="image/png" href="logo.png"/>
+  <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet"/>
+  <script src="https://cdn.jsdelivr.net/npm/admin-lte@3.1/dist/js/adminlte.min.js"></script>
+
+</head>
+
+      <!-- Main Sidebar Container -->
+	  <aside class="main-sidebar sidebar-dark-primary elevation-4">
+		<!-- Brand Logo -->
+		<a href="/" class="brand-link">
+		  <span class="brand-text font-weight-light text-center">Covid Inventory System</span>
+		</a>
+	
+		<!-- Sidebar -->
+		<div class=".sidebar-collapse">
+		  <!-- Sidebar Menu -->
+		  <nav class="mt-2">
+			<ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+			  <!-- Add icons to the links using the .nav-icon class
+				   with font-awesome or any other icon font library -->
+				   <li class="nav-item has-treeview menu-open">
+					<ul class="nav nav-treeview">
+					  <li class="nav-item">
+						<a href="/" class="nav-link">
+						  <i class="nav-icon fas fa-th"></i>
+						  <p>Beds</p>
+						</a>
+					  </li>
+					  <li class="nav-item">
+						<a href="/oxygen" class="nav-link">
+						  <i class="nav-icon fas fa-th"></i>
+						  <p>Oxygen</p>
+						</a>
+					  </li>
+					  <li class="nav-item">
+						<a href="/create_beds" class="nav-link">
+						  <i class="far fa-circle nav-icon"></i>
+						  <p>Add Beds</p>
+						</a>
+					  </li>
+					  <li class="nav-item">
+						<a href="/create_oxygen" class="nav-link">
+						  <i class="far fa-circle nav-icon"></i>
+						  <p>Add Oxygen</p>
+						</a>
+					  </li>
+					</ul>
+				  </li>
+			</ul>
+		  </nav>
+		  <!-- /.sidebar-menu -->
+		</div>
+		<!-- /.sidebar -->
+	  </aside>
+
+		<!-- Content Wrapper. Contains page content -->
+		<div class="content-wrapper text-center">
+			
+			<section class="content-header">
+				<h1 style="text-align: center;">Centro Inventory Management</h1>
+			</section>
+			<section class="content">
+				<form  method="POST" action="/add_bdata">
+					<div class="form-group">
+						<label for="exampleInputEmail1">Name: </label>
+						<input type="text" name="name" required><br><br>
+					</div>
+					<div class="form-group">
+						<label for="exampleInputPassword1">Phone Number: </label>
+						<input type="text" name="number" required><br><br>
+					</div>
+					<div class="form-group">
+						<label for="exampleInputEmail1">Hospital Name: </label>
+						<input type="text" name="hname" required><br><br>
+					</div>
+					<div class="form-group">
+						<label for="exampleInputPassword1">Number of Beds: </label>
+						<input type="number" name="nobeds" required><br><br>
+					</div>
+					<div class="form-group">
+						<label for="exampleInputEmail1">Address: </label>
+						<input type="text" name="address" required><br><br>
+					</div>
+					<button type="submit" class="btn btn-primary">Submit</button>
+				</form>
+        	</section>
+        	</div>
+        </div>
+    </body>
+</html>
