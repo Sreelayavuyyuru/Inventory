@@ -1,3 +1,4 @@
+require('dotenv').config()
 const express=require('express')
 const app=express()
 const mongoose=require('mongoose');
@@ -5,14 +6,29 @@ const bodyParser=require('body-parser')
 const MongoClient=require('mongodb').MongoClient
 var db;
 var string;
-let date=new Date().toString()
-MongoClient.connect('mongodb://localhost:27017',{ useUnifiedTopology: true},(err,database)=>{
+let date=new Date().toString();
+const url = "mongodb+srv://sreelaya:mongodbpassword@inventory.jygib.mongodb.net/covid19?retryWrites=true&w=majority";
+
+// MongoClient.connect(url,connectionParams)
+//     .then( () => {
+//         console.log('Connected to database ')
+//     })
+//     .catch( (err) => {
+//         console.error(`Error connecting to the database. \n${err}`);
+// })
+
+MongoClient.connect(url,{ useUnifiedTopology: true},(err,database)=>{
     if(err) return console.log(err)
     db=database.db('covid19')
-    app.listen(1000,()=>{
-        console.log("Listening to port #1000")
-    })
 })
+
+const port = process.env.PORT || 1000;
+app.listen(port);
+
+// app.listen(1000,()=>{
+//     console.log("Listening to port #1000")
+// })
+
 app.set('view engine','ejs')
 app.use(bodyParser.urlencoded({extended: true}))
 app.use(bodyParser.json())
