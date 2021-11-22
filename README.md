@@ -6,6 +6,3 @@ For now, we can add beds and oxyden, delete the beds and oxygen.
 
 https://inventory-sreelaya.herokuapp.com/ 
 Please check this website to see the deployment of the website. (Compatible with Laptop Browsers)
-
-
-git checkout 
